@@ -32,9 +32,9 @@ export default function RootLayout({
       lang="en"
       className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col bg-gray-900 text-white">
         <Nav />
-        <main>{children}</main>
+        <main className="min-h-screen max-w-7xl mx-auto p-4">{children}</main>
         <Footer />
       </body>
     </html>
