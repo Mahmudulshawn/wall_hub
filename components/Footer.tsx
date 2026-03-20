@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white mt-16">
+    <footer className="bg-popover border-t text-white mt-16">
       <div className="max-w-7xl mx-auto px-6 py-12 flex items-center justify-between">
         {/* Brand */}
         <div>
@@ -27,7 +27,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom */}
-      <div className="border-t border-gray-800 text-center text-sm text-gray-500 py-4">
+      <div className=" text-center text-sm text-gray-500 py-4">
         © {new Date().getFullYear()} WallHub. All rights reserved.
       </div>
     </footer>

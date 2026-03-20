@@ -4,8 +4,11 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { cn } from "@/lib/utils";
+import { AuthProvider } from "@/context/AuthContext";
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
+import { ThemeProvider } from "@/components/theme-provider"
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,12 +33,28 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}
+      className={cn(
+        "h-full",
+        "antialiased",
+        geistSans.variable,
+        geistMono.variable,
+        "font-sans",
+        inter.variable,
+      )}
     >
-      <body className="min-h-full flex flex-col bg-gray-900 text-white">
-        <Nav />
-        <main className="min-h-screen max-w-7xl mx-auto p-4">{children}</main>
-        <Footer />
+      <body className="min-h-full flex flex-col bg-background text-white">
+        <AuthProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Nav />
+            <main className="min-h-screen max-w-7xl mx-auto p-4">{children}</main>
+            <Footer />
+          </ThemeProvider>
+        </AuthProvider>
       </body>
     </html>
   );
