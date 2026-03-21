@@ -51,7 +51,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <Nav />
-            <main className="min-h-screen max-w-7xl mx-auto p-4">{children}</main>
+            <main className="min-h-[63vh] max-w-7xl mx-auto p-4">{children}</main>
             <Footer />
           </ThemeProvider>
         </AuthProvider>

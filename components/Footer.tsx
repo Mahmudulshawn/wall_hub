@@ -1,9 +1,10 @@
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
   return (
     <footer className="bg-popover border-t text-white mt-16">
-      <div className="max-w-7xl mx-auto px-6 py-12 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
         {/* Brand */}
         <div>
           <h2 className="text-2xl font-bold">WallHub</h2>
@@ -17,10 +18,16 @@ const Footer = () => {
           <h3 className="font-semibold mb-3">Company</h3>
           <ul className="space-y-2 text-sm text-gray-400">
             <li>
-              <a href="#">About Us</a>
+              <Link href="/about">About Us</Link>
             </li>
             <li>
-              <a href="#">Contact</a>
+              <Link href="/contact">Contact</Link>
+            </li>
+            <li>
+              <Link href="/">Privacy Policy</Link>
+            </li>
+            <li>
+              <Link href="/">Terms of Service</Link>
             </li>
           </ul>
         </div>

@@ -10,7 +10,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function Navbar() {
@@ -28,13 +27,12 @@ export default function Navbar() {
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    console.log("Search query:", searchQuery);
     // You can route or call API here
     // e.g., router.push(`/search?q=${searchQuery}`)
   };
 
   return (
-    <nav className="w-full border-b bg-transparent backdrop-blur-sm sticky top-0 z-50">
+    <nav className="w-full border-b bg-transparent backdrop-blur-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
         <Link href={"/"} className="text-2xl font-bold tracking-tight">
@@ -49,13 +47,13 @@ export default function Navbar() {
             onSubmit={(e) => handleSearchSubmit(e)}
           >
             <Search
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-purple-400"
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
               size={18}
             />
             <input
               type="text"
-              placeholder="Search wallpaper..."
-              className="w-full pl-10 pr-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black/20"
+              placeholder="Search beautiful wallpapers..."
+              className="w-full bg-popover pl-10 pr-4 py-2 rounded-full outline outline-muted focus:ring-2 focus:ring-black/20"
               value={searchQuery}
               onChange={(e) => handleSearchChange(e)}
             />
@@ -66,6 +64,8 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-4 text-sm font-medium">
           <Link href="/">Home</Link>
           <Link href="/collections">Collections</Link>
+          <Link href="/about">About</Link>
+          <Link href="/contact">Contact</Link>
 
           {user ? (
             <DropdownMenu>
@@ -120,6 +120,8 @@ export default function Navbar() {
           <div className="flex flex-col gap-3 text-sm font-medium">
             <Link href="/">Home</Link>
             <Link href="/collections">Collections</Link>
+            <Link href="/about">About</Link>
+            <Link href="/contact">Contact</Link>
             {user ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
